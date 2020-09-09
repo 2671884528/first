@@ -1,6 +1,7 @@
 package com.线程池;
 
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @auther 郭永钢
@@ -27,7 +28,7 @@ public class MyThreadPoolExecutor {
 
     void init () throws InterruptedException {
         //固定数量
-        //ExecutorService pool = Executors.newFixedThreadPool(5);
+//        ExecutorService pool = Executors.newFixedThreadPool(5);
         //单线程
         //ExecutorService pool = Executors.newSingleThreadExecutor();
         //可扩展
@@ -38,6 +39,8 @@ public class MyThreadPoolExecutor {
                 System.out.println("线程"+Thread.currentThread().getName());
             }));
             TimeUnit.SECONDS.sleep(1);
+            AtomicInteger integer = new AtomicInteger(1);
+//            integer.getAndAdd()
         }
     }
 }
